@@ -90,13 +90,13 @@ class get_pybind_include(object):
 
 ext_modules = [
     Extension(
-        "chiapos",
+        "chinillapos",
         [
             "lib/FiniteStateEntropy/lib/entropy_common.c",
             "lib/FiniteStateEntropy/lib/fse_compress.c",
             "lib/FiniteStateEntropy/lib/fse_decompress.c",
             "lib/FiniteStateEntropy/lib/hist.c",
-            "python-bindings/chiapos.cpp",
+            "python-bindings/chinillapos.cpp",
             "uint128_t/uint128_t.cpp",
             "src/b3/blake3.c",
             "src/b3/blake3_portable.c",
@@ -185,15 +185,15 @@ class BuildExt(build_ext):
 
 if platform.system() == "Windows":
     setup(
-        name="chiapos",
+        name="chinillapos",
         author="Mariano Sorgente",
-        author_email="mariano@chia.net",
-        description="Chia proof of space plotting, proving, and verifying (wraps C++)",
+        author_email="mariano@chinilla.net",
+        description="Chinilla proof of space plotting, proving, and verifying (wraps C++)",
         license="Apache License",
         python_requires=">=3.7",
         long_description=open("README.md").read(),
         long_description_content_type="text/markdown",
-        url="https://github.com/Chia-Network/chiapos",
+        url="https://github.com/Chinilla/chinillapos",
         setup_requires=["pybind11>=2.10.0"],
         tests_require=["pytest"],
         ext_modules=ext_modules,
@@ -202,17 +202,17 @@ if platform.system() == "Windows":
     )
 else:
     setup(
-        name="chiapos",
+        name="chinillapos",
         author="Mariano Sorgente",
-        author_email="mariano@chia.net",
-        description="Chia proof of space plotting, proving, and verifying (wraps C++)",
+        author_email="mariano@chinilla.net",
+        description="Chinilla proof of space plotting, proving, and verifying (wraps C++)",
         license="Apache License",
         python_requires=">=3.7",
         long_description=open("README.md").read(),
         long_description_content_type="text/markdown",
-        url="https://github.com/Chia-Network/chiapos",
+        url="https://github.com/Chinilla/chinillapos",
         tests_require=["pytest"],
-        ext_modules=[CMakeExtension("chiapos", ".")],
+        ext_modules=[CMakeExtension("chinillapos", ".")],
         cmdclass=dict(build_ext=CMakeBuild),
         zip_safe=False,
     )
